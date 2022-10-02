@@ -22,6 +22,9 @@ Please follow these simple steps to start working:<br>
 git clone https://github.com/Sanket1308/Weather-App.git
 ```
 
+<img width="677" alt="Screenshot 2022-10-02 210756" src="https://user-images.githubusercontent.com/75414649/193462666-88895a07-8f12-46f4-b987-77c7235e4d9a.png">
+
+
 **3.** Navigate to your project directory and open it in your code editor. :file_folder: .
 
 ```
