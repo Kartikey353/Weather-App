@@ -4,13 +4,47 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   background: #222;
-  background-image: url('https://source.unsplash.com/1600x900/?landscape');
+  background-image: url("https://source.unsplash.com/1600x900/?landscape");
+  background-size: cover;
   font-size: 120%;
+  transition: all 1.2s;
 }
-
+#confirm {
+  display: none;
+  box-sizing: border-box;
+  text-align: center; 
+  background: #8b828254;
+ color: white;
+ padding: 2em;
+ border-radius: 30px;
+ width: 100%;
+ max-width: 420px;
+}
+#confirm button {
+  background-color: #49484A;
+  color: white;
+  border-radius: 8px;
+  display: inline-block;
+  border-radius: 12px;
+  border: 2px solid #49484A;
+  padding: 5px;
+  text-align: center;
+  width: 100px;
+  cursor: pointer;
+}
+#confirm .message {
+  text-align: left;
+}
+.c{
+  margin-left: -40px;
+}
+.f{
+  margin-left: -70px;
+}
 .card {
+  position: relative;
   background: #000000d0;
   color: white;
   padding: 2em;
@@ -26,7 +60,7 @@ body {
   justify-content: center;
 }
 
-button {
+#switch {
   margin: 0.5em;
   border-radius: 50%;
   border: none;
@@ -37,7 +71,9 @@ button {
   color: white;
   cursor: pointer;
   transition: 0.2s ease-in-out;
+
 }
+
 
 input.search-bar {
   border: none;
@@ -51,11 +87,23 @@ input.search-bar {
   width: calc(100% - 100px);
 }
 
+button{
+  box-shadow: inset 0 0 0 0 red;
+  transition: ease-in-out 0.9s;
+
+}
+
 button:hover {
   background: #7c7c7c6b;
+  box-shadow: inset 50px 0 0 0 red;
+
 }
 
 h1.temp {
+  margin: 0;
+  margin-bottom: 0.4em;
+}
+h1.temp-F {
   margin: 0;
   margin-bottom: 0.4em;
 }
@@ -70,6 +118,28 @@ h1.temp {
   margin-left: 8px;
 }
 
+.weather
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 4px;
+  margin: 6.9px;
+}
+.flexnew
+{
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  /* margin:10px; */
+}
+.city
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 .weather.loading {
   visibility: hidden;
   max-height: 20px;
@@ -84,3 +154,146 @@ h1.temp {
   top: 0;
   left: 20px;
 }
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  /* margin-bottom: 15px; */
+  margin-right: 25px;
+  margin-bottom: 40px;
+
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(114, 112, 112);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.fahrenheit
+{
+  display: none;
+  color: white;
+}
+.celsius,.fahrenheit
+{
+  color: black;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 140%;
+  font-size: 15px;
+  font-family: Verdana, sans-serif;
+}
+
+input:checked+ .slider .fahrenheit
+{display: block;}
+input:checked + .slider .celsius
+{display: none;}
+
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+.toggle-btn{
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.contrast{
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #222;
+}
+
+.darkmode{
+  filter: invert(1);
+}
+.light-mode {
+  background-color: rgba(255, 255, 255, 0.922);
+  color: black;
+  opacity: 90%;
+}
+#toggler{
+  background-color: black;
+  color: white;
+  position: fixed;
+  top: 10%;
+  right: 10%;
+}
+
+input.change{
+  color: black;
+}
+h2
+{
+  margin-top: 5px;
+  margin: 8px;
+}
+h1.temp
+{
+  margin-top: 5px;
+  margin: 8px;
+  margin-bottom: 40px;
+}
+.description
+{
+  margin: 8px;
+}
+.humidity
+{
+  margin: 8px;
+}
+.wind
+{
+  margin: 8px;
+}
+/* .centir 
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+} */
